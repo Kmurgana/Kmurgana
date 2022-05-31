@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Kevin Murgana</h1>
 <h3 align="center">A passionate studendt and self employed as PM / Scrum Master from Argentina</h3>
 
-- 🔭 I’m currently working on **UK-2.0 for Wine Industry**
+- 🔭 I’m currently working on **UK-2.0 for Wine Industry** I'm also participating on Data Science's Juiors Hackathons.
 
 - 🌱 I’m currently learning **Machine Learning and TensorFlow**
 
