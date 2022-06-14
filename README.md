@@ -17,6 +17,9 @@
 <p align="left">
 <a href="https://linkedin.com/in/kevin-murgana" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="kevin-murgana" height="30" width="40" /></a>
 <a href="https://kaggle.com/kevinmurgana" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/kaggle.svg" alt="kevinmurgana" height="30" width="40" /></a>
+  
+<a href="https://nuwe.io/users/murganakevin" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/kaggle.svg" alt="kevinmurgana" height="30" width="40" /></a>  
+    
 <a href="https://instagram.com/kevinmurgana" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="kevinmurgana" height="30" width="40" /></a>
 <a href="https://discord.gg/Suprabound#2256" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="Suprabound#2256" height="30" width="40" /></a>
 </p>
