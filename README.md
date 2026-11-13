@@ -1,24 +1,78 @@
-<h1 align="center">Hi 👋, I'm Kevin Murgana</h1>
-<h3 align="center">A passionate Machine Learning and Data Scientist developer from Argentina</h3>
+<div align="center">
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=kmurgana&label=Profile%20views&color=0e75b6&style=flat" alt="kmurgana" /> </p>
+<img src="assets/header.svg" alt="Kevin Murgana — Sr. Data Scientist · Machine Learning · NLP · GenAI" width="100%"/>
 
-- 🌱 I’m currently learning **Machine Learning and TensorFlow**
+<a href="https://linkedin.com/in/kevin-murgana"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-kevin--murgana-111B28?style=flat-square&logo=linkedin&logoColor=00E5FF&labelColor=0A0E14"/></a>
+<a href="https://kaggle.com/kevinmurgana"><img alt="Kaggle" src="https://img.shields.io/badge/Kaggle-kevinmurgana-111B28?style=flat-square&logo=kaggle&logoColor=00E5FF&labelColor=0A0E14"/></a>
+<a href="mailto:murgana.kevin@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-murgana.kevin%40gmail.com-111B28?style=flat-square&logo=gmail&logoColor=00E5FF&labelColor=0A0E14"/></a>
+<a href="https://restoradar.app"><img alt="RestoRadar" src="https://img.shields.io/badge/Building-RestoRadar-111B28?style=flat-square&logoColor=00E5FF&labelColor=0A0E14"/></a>
+<!-- Más enlaces (descomentar y ajustar):
+<a href="https://instagram.com/kevinmurgana"><img alt="Instagram" src="https://img.shields.io/badge/Instagram-kevinmurgana-111B28?style=flat-square&logo=instagram&logoColor=00E5FF&labelColor=0A0E14"/></a>
+-->
 
-- 👨‍💻 All of my projects are available at [https://github.com/Kmurgana?tab=repositories](https://github.com/Kmurgana?tab=repositories)
+</div>
 
-- 📫 How to reach me **murgana.kevin@gmail.com / kmurgana@yahoo.com**
+### `// WHOAMI`
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/kevin-murgana" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="kevin-murgana" height="30" width="40" /></a>
-<a href="https://kaggle.com/kevinmurgana" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/kaggle.svg" alt="kevinmurgana" height="30" width="40" /></a>
-<a href="https://instagram.com/kevinmurgana" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="kevinmurgana" height="30" width="40" /></a>
-<a href="https://discord.gg/Suprabound#2256" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="Suprabound#2256" height="30" width="40" /></a>
-</p>
+```text
+┌────────────────────────────────────────────────────────────┐
+│ kevin@argentina:~$ whoami                                  │
+│                                                            │
+│  role      Sr. Data Scientist · 4+ years                   │
+│  focus     Machine Learning · NLP · GenAI                  │
+│  genai     RAG pipelines · LangChain · OpenAI API          │
+│  building  RestoRadar -> restoradar.app                    │
+│  stack     Python · SQL · PyTorch · TensorFlow             │
+│  reach     murgana.kevin@gmail.com                         │
+└────────────────────────────────────────────────────────────┘
+```
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://www.arduino.cc/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="arduino" width="40" height="40"/> </a> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.mathworks.com/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="matlab" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://seaborn.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="seaborn" width="40" height="40"/> </a> <a href="https://www.sqlite.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="40" height="40"/> </a> <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/> </a> </p>
-<h3 align="left">📊 GitHub Stats:</h3>
+### `// STACK`
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=kmurgana&" alt="kmurgana" /></p>
+<div align="center">
+
+**`ML · DL`** &nbsp;
+<img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-111B28?style=flat-square&logo=pytorch&logoColor=00E5FF&labelColor=0A0E14"/>
+<img alt="TensorFlow" src="https://img.shields.io/badge/TensorFlow-111B28?style=flat-square&logo=tensorflow&logoColor=00E5FF&labelColor=0A0E14"/>
+<img alt="scikit-learn" src="https://img.shields.io/badge/scikit--learn-111B28?style=flat-square&logo=scikitlearn&logoColor=00E5FF&labelColor=0A0E14"/>
+
+**`GenAI`** &nbsp;
+<img alt="LangChain" src="https://img.shields.io/badge/LangChain-111B28?style=flat-square&logo=langchain&logoColor=00E5FF&labelColor=0A0E14"/>
+<img alt="OpenAI API" src="https://img.shields.io/badge/OpenAI_API-111B28?style=flat-square&logo=openai&logoColor=00E5FF&labelColor=0A0E14"/>
+<img alt="RAG pipelines" src="https://img.shields.io/badge/RAG_pipelines-111B28?style=flat-square&labelColor=0A0E14"/>
+
+**`DATA`** &nbsp;
+<img alt="Python" src="https://img.shields.io/badge/Python-111B28?style=flat-square&logo=python&logoColor=00E5FF&labelColor=0A0E14"/>
+<img alt="pandas" src="https://img.shields.io/badge/pandas-111B28?style=flat-square&logo=pandas&logoColor=00E5FF&labelColor=0A0E14"/>
+<img alt="seaborn" src="https://img.shields.io/badge/seaborn-111B28?style=flat-square&labelColor=0A0E14"/>
+<img alt="MySQL" src="https://img.shields.io/badge/MySQL-111B28?style=flat-square&logo=mysql&logoColor=00E5FF&labelColor=0A0E14"/>
+<img alt="SQLite" src="https://img.shields.io/badge/SQLite-111B28?style=flat-square&logo=sqlite&logoColor=00E5FF&labelColor=0A0E14"/>
+
+**`ALSO`** &nbsp;
+<img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-111B28?style=flat-square&logo=typescript&logoColor=00E5FF&labelColor=0A0E14"/>
+<img alt="C" src="https://img.shields.io/badge/C-111B28?style=flat-square&logo=c&logoColor=00E5FF&labelColor=0A0E14"/>
+<img alt="C++" src="https://img.shields.io/badge/C%2B%2B-111B28?style=flat-square&logo=cplusplus&logoColor=00E5FF&labelColor=0A0E14"/>
+<img alt="MATLAB" src="https://img.shields.io/badge/MATLAB-111B28?style=flat-square&logo=mathworks&logoColor=00E5FF&labelColor=0A0E14"/>
+<img alt="Arduino" src="https://img.shields.io/badge/Arduino-111B28?style=flat-square&logo=arduino&logoColor=00E5FF&labelColor=0A0E14"/>
+<img alt="Git" src="https://img.shields.io/badge/Git-111B28?style=flat-square&logo=git&logoColor=00E5FF&labelColor=0A0E14"/>
+
+</div>
+
+### `// TELEMETRY`
+
+<div align="center">
+
+<img src="assets/hud-activity.svg" width="410" alt="GitHub activity: contributions in the last 12 months, current and longest streak, 12-month heatmap"/>
+<img src="assets/hud-langs.svg" width="410" alt="Most used languages across my repositories"/>
+
+<sub>Cards regenerated daily by a GitHub Action from the GitHub API.</sub>
+
+</div>
+
+<div align="center">
+
+<img src="assets/footer.svg" alt="End of transmission" width="100%"/>
+
+<a href="https://github.com/Kmurgana"><img alt="Profile views" src="https://komarev.com/ghpvc/?username=kmurgana&label=VIEWS&color=00B8D4&style=flat-square"/></a>
+
+</div>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="230" viewBox="0 0 420 230" role="img" aria-label="STACK.USAGE">
+<title>STACK.USAGE</title>
+<defs>
+  <linearGradient id="bd" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#00E5FF" stop-opacity=".9"/><stop offset=".55" stop-color="#A78BFA" stop-opacity=".55"/><stop offset="1" stop-color="#FF2E9A" stop-opacity=".9"/>
+  </linearGradient>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0F1621"/><stop offset="1" stop-color="#0A0E14"/></linearGradient>
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#1E2A3A" stroke-width=".6" opacity=".55"/></pattern>
+  <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<style>
+text{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono','DejaVu Sans Mono',monospace}
+.t{font-size:11px;letter-spacing:2px;fill:#00E5FF;font-weight:700}
+.m{font-size:10px;letter-spacing:1px;fill:#6B7F95}
+.l{font-size:10px;letter-spacing:1.5px;fill:#6B7F95}
+.v{font-size:26px;font-weight:800}
+.u{font-size:11px;fill:#6B7F95}
+.n{font-size:12px;fill:#C9D6E2}
+.p{font-size:12px;fill:#6B7F95}
+</style>
+<rect x=".75" y=".75" width="418.5" height="228.5" rx="14" fill="url(#bg)" stroke="url(#bd)" stroke-width="1.5"/>
+<rect x="1.5" y="1.5" width="417" height="227" rx="13" fill="url(#grid)"/>
+<path d="M12 22V12a2 2 0 0 1 2-2h10M408 22V12a2 2 0 0 0-2-2h-10M12 208v10a2 2 0 0 0 2 2h10M408 208v10a2 2 0 0 1-2 2h-10" fill="none" stroke="#00E5FF" stroke-width="1.4" opacity=".75"/>
+<text x="24" y="31" class="t">STACK.USAGE</text>
+<circle cx="396" cy="27.5" r="3" fill="#7CFFB2"><animate attributeName="opacity" values="1;.25;1" dur="2.4s" repeatCount="indefinite"/></circle>
+<text x="386" y="31" class="m" text-anchor="end">SYNC PENDING</text>
+<rect x="24" y="54" width="372" height="10" rx="5" fill="#111B28"/>
+<text x="24" y="100" class="n">AWAITING FIRST SYNC</text>
+</svg>
