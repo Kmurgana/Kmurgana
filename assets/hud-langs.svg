@@ -29,13 +29,11 @@ text{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberatio
 <rect x="24.00" y="54" width="342.90" height="10" fill="#e34c26"/>
 <rect x="366.30" y="54" width="22.70" height="10" fill="#3572A5"/>
 <rect x="388.40" y="54" width="6.89" height="10" fill="#000080"/>
-<rect x="394.69" y="54" width="1.87" height="10" fill="#427819"/>
-<rect x="395.96" y="54" width="0.64" height="10" fill="#89e051"/>
+<rect x="394.69" y="54" width="1.91" height="10" fill="#6B7F95"/>
 </g>
 <circle cx="29" cy="90" r="4.5" fill="#e34c26" filter="url(#glow)"/><text x="42" y="94" class="n">HTML</text><text x="196" y="94" class="p" text-anchor="end">92.0%</text>
 <circle cx="219" cy="90" r="4.5" fill="#3572A5" filter="url(#glow)"/><text x="232" y="94" class="n">Python</text><text x="386" y="94" class="p" text-anchor="end">5.9%</text>
 <circle cx="29" cy="120" r="4.5" fill="#000080" filter="url(#glow)"/><text x="42" y="124" class="n">Lua</text><text x="196" y="124" class="p" text-anchor="end">1.7%</text>
-<circle cx="219" cy="120" r="4.5" fill="#427819" filter="url(#glow)"/><text x="232" y="124" class="n">Makefile</text><text x="386" y="124" class="p" text-anchor="end">0.3%</text>
-<circle cx="29" cy="150" r="4.5" fill="#89e051" filter="url(#glow)"/><text x="42" y="154" class="n">Shell</text><text x="196" y="154" class="p" text-anchor="end">0.0%</text>
+<circle cx="219" cy="120" r="4.5" fill="#6B7F95" filter="url(#glow)"/><text x="232" y="124" class="n">Other</text><text x="386" y="124" class="p" text-anchor="end">0.4%</text>
 <text x="24" y="212" class="m">13 repos · Jupyter Notebook excluded</text>
 </svg>
