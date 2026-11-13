@@ -114,7 +114,7 @@ def fetch_activity(login: str, token: str) -> dict:
         end = min(start + dt.timedelta(days=364, hours=23, minutes=59, seconds=59), now)
         c = gql(
             Q_CAL,
-            {"l": login, "from": start.isoformat(), "to": end.isoformat()},
+            {"l": login, "from": iso(start), "to": iso(end)},
             token,
         )["user"]["contributionsCollection"]["contributionCalendar"]
         lo, hi = start.date().isoformat(), end.date().isoformat()
@@ -133,6 +133,10 @@ def fetch_activity(login: str, token: str) -> dict:
         "longest_streak": best,
         "all_time": sum(all_days.values()),
     }
+
+
+def iso(t: dt.datetime) -> str:
+    return t.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def streaks(days: dict[str, int]) -> tuple[int, int]:
@@ -170,11 +174,14 @@ def fetch_languages(login: str, token: str, exclude: set[str]) -> dict:
         if not repo_page["pageInfo"]["hasNextPage"]:
             break
         after = repo_page["pageInfo"]["endCursor"]
-    grand = sum(v[0] for v in totals.values()) or 1
+    if not totals:
+        return {"langs": [], "repos": repos}
+    grand = sum(v[0] for v in totals.values())
     ranked = sorted(totals.items(), key=lambda kv: kv[1][0], reverse=True)
-    top = [(n, s / grand * 100, c) for n, (s, c) in ranked[:6]]
-    rest = sum(s for _, (s, _) in ranked[6:]) / grand * 100
-    if rest >= 0.5:
+    # se muestran hasta 6 lenguajes con al menos 0,5 %; el resto se agrupa en "Other"
+    top = [(n, s / grand * 100, c) for n, (s, c) in ranked[:6] if s / grand * 100 >= 0.5]
+    rest = 100 - sum(p for _, p, _ in top)
+    if rest >= 0.05:
         top.append(("Other", rest, MUTED))
     return {"langs": top, "repos": repos}
 
@@ -216,7 +223,7 @@ def level(count: int, cuts: list[int]) -> int:
     return 4
 
 
-def activity_svg(d: dict | None, sync: str) -> str:
+def activity_svg(d: dict | None, sync: str, public_only: bool = False) -> str:
     d = d or {}
     tiles = [
         ("LAST 12 MONTHS", fmt(d.get("year_total")), "contribs", CYAN),
@@ -258,7 +265,7 @@ def activity_svg(d: dict | None, sync: str) -> str:
                     else f'<rect x="{x:.2f}" y="{y:.2f}" width="{pitch-1.6:.2f}" height="{pitch-1.6:.2f}" rx="1.2" fill="{HEAT[lv]}"/>'
                 )
         out.append(
-            f'<text x="396" y="162" class="m" text-anchor="end">{d["active_days"]} active days</text>'
+            f'<text x="396" y="162" class="m" text-anchor="end">{d["active_days"]} active days{" · public data only" if public_only else ""}</text>'
         )
     else:
         for wi in range(53):
@@ -270,12 +277,18 @@ def activity_svg(d: dict | None, sync: str) -> str:
     return shell("ACTIVITY.LOG", sync, "\n".join(out))
 
 
-def langs_svg(d: dict | None, sync: str, excluded: set[str]) -> str:
+def langs_svg(d: dict | None, sync: str, excluded: set[str], public_only: bool = False) -> str:
     out = []
     langs = (d or {}).get("langs")
     if not langs:
         out.append(f'<rect x="24" y="54" width="372" height="10" rx="5" fill="{HEAT[0]}"/>')
-        out.append(f'<text x="24" y="100" class="n">AWAITING FIRST SYNC</text>')
+        if d is None:
+            out.append(f'<text x="24" y="100" class="n">AWAITING FIRST SYNC</text>')
+        else:
+            out.append(f'<text x="24" y="100" class="n">NO LANGUAGE DATA FOUND</text>')
+            hint = ["No non-fork repos visible to this token.", "Add PROFILE_TOKEN to include private repos."] if public_only else ["No non-fork repos with code were found."]
+            for i, line in enumerate(hint):
+                out.append(f'<text x="24" y="{124 + i * 18}" class="m">{escape(line)}</text>')
         return shell("STACK.USAGE", sync, "\n".join(out))
     out.append('<clipPath id="bar"><rect x="24" y="54" width="372" height="10" rx="5"/></clipPath>')
     out.append('<g clip-path="url(#bar)">')
@@ -296,6 +309,8 @@ def langs_svg(d: dict | None, sync: str, excluded: set[str]) -> str:
     note = f'{d["repos"]} repos'
     if excluded:
         note += " · " + ", ".join(sorted(excluded)) + " excluded"
+    if public_only:
+        note += " · public only"
     out.append(f'<text x="24" y="212" class="m">{escape(note)}</text>')
     return shell("STACK.USAGE", sync, "\n".join(out))
 
@@ -349,13 +364,14 @@ def main() -> None:
     ap.add_argument("--demo", metavar="OUT_DIR")
     args = ap.parse_args()
     sync = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
+    public_only = os.environ.get("PUBLIC_ONLY") == "1"
     exclude = {s.strip() for s in os.environ.get("EXCLUDE_LANGS", "Jupyter Notebook").split(",") if s.strip()}
 
     if args.demo:
         act, langs = demo_data()
         out = Path(args.demo)
-        write(out / "hud-activity.svg", activity_svg(act, sync))
-        write(out / "hud-langs.svg", langs_svg(langs, sync, exclude))
+        write(out / "hud-activity.svg", activity_svg(act, sync, public_only))
+        write(out / "hud-langs.svg", langs_svg(langs, sync, exclude, public_only))
         return
     if args.placeholder:
         write(ASSETS / "hud-activity.svg", activity_svg(None, "PENDING"))
@@ -368,9 +384,13 @@ def main() -> None:
     login = os.environ.get("PROFILE_LOGIN", "Kmurgana")
     act = fetch_activity(login, token)
     langs = fetch_languages(login, token, exclude)
+    print(
+        f"login={login} public_only={public_only} year_total={act['year_total']} all_time={act['all_time']} "
+        f"streak={act['current_streak']}/{act['longest_streak']} repos={langs['repos']} langs={[n for n, _, _ in langs['langs']]}"
+    )
     # solo se escribe si todo salió bien: nunca se pisa una tarjeta buena con una rota
-    write(ASSETS / "hud-activity.svg", activity_svg(act, sync))
-    write(ASSETS / "hud-langs.svg", langs_svg(langs, sync, exclude))
+    write(ASSETS / "hud-activity.svg", activity_svg(act, sync, public_only))
+    write(ASSETS / "hud-langs.svg", langs_svg(langs, sync, exclude, public_only))
 
 
 if __name__ == "__main__":
