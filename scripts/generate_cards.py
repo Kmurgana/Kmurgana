@@ -22,7 +22,9 @@ import datetime as dt
 import json
 import os
 import random
+import re
 import sys
+import time
 import urllib.error
 import urllib.request
 from html import escape
@@ -56,24 +58,63 @@ text{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberatio
 
 
 # ── GitHub API ─────────────────────────────────────────────────────────────
-def gql(query: str, variables: dict, token: str) -> dict:
-    req = urllib.request.Request(
-        API,
-        data=json.dumps({"query": query, "variables": variables}).encode(),
-        headers={
-            "Authorization": f"Bearer {token}",
-            "Content-Type": "application/json",
-            "User-Agent": "profile-hud-cards",
-        },
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=30) as r:
-            payload = json.load(r)
-    except urllib.error.HTTPError as e:  # pragma: no cover
-        raise SystemExit(f"GitHub API HTTP {e.code}: {e.read().decode()[:300]}")
-    if payload.get("errors"):
-        raise SystemExit(f"GitHub API error: {payload['errors']}")
-    return payload["data"]
+STAGE = "init"
+
+
+def say(stage: str) -> None:
+    """Marca en qué paso estamos, para que el log de Actions muestre dónde falla."""
+    global STAGE
+    STAGE = stage
+    print(f"[{time.strftime('%H:%M:%S')}] {stage}", flush=True)
+
+
+def _clean(text: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", text)).strip()[:200]
+
+
+def gql(query: str, variables: dict, token: str, attempts: int = 4) -> dict:
+    """POST a la API GraphQL; reintenta ante errores transitorios (502/503/504, timeouts)."""
+    body = json.dumps({"query": query, "variables": variables}).encode()
+    for attempt in range(1, attempts + 1):
+        req = urllib.request.Request(
+            API,
+            data=body,
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Content-Type": "application/json",
+                "User-Agent": "profile-hud-cards",
+            },
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                payload = json.load(r)
+        except urllib.error.HTTPError as e:
+            detail = _clean(e.read().decode(errors="replace"))
+            if e.code in (502, 503, 504) and attempt < attempts:
+                wait = attempt * 6
+                print(f"  {STAGE}: HTTP {e.code}, reintento {attempt}/{attempts - 1} en {wait}s", flush=True)
+                time.sleep(wait)
+                continue
+            raise SystemExit(f"[{STAGE}] GitHub API HTTP {e.code}: {detail}")
+        except (urllib.error.URLError, TimeoutError) as e:
+            if attempt < attempts:
+                wait = attempt * 6
+                print(f"  {STAGE}: {e}, reintento {attempt}/{attempts - 1} en {wait}s", flush=True)
+                time.sleep(wait)
+                continue
+            raise SystemExit(f"[{STAGE}] sin respuesta de la API: {e}")
+        errors = payload.get("errors")
+        if errors:
+            msg = "; ".join(str(e.get("message", e)) for e in errors)
+            transient = re.search(r"timeout|timed out|something went wrong", msg, re.I)
+            if transient and attempt < attempts:
+                wait = attempt * 6
+                print(f"  {STAGE}: {msg[:120]}, reintento {attempt}/{attempts - 1} en {wait}s", flush=True)
+                time.sleep(wait)
+                continue
+            raise SystemExit(f"[{STAGE}] GitHub API error: {msg[:300]}")
+        return payload["data"]
+    raise SystemExit(f"[{STAGE}] agotados los reintentos")
 
 
 Q_CREATED = "query($l:String!){ user(login:$l){ createdAt } }"
@@ -88,9 +129,9 @@ query($l:String!, $from:DateTime, $to:DateTime){
 Q_LANGS = """
 query($l:String!, $after:String){
   user(login:$l){
-    repositories(first:100, after:$after, ownerAffiliations:OWNER, isFork:false){
+    repositories(first:50, after:$after, ownerAffiliations:OWNER, isFork:false){
       pageInfo{ hasNextPage endCursor }
-      nodes{ languages(first:10, orderBy:{field:SIZE, direction:DESC}){ edges{ size node{ name color } } } }
+      nodes{ languages(first:8, orderBy:{field:SIZE, direction:DESC}){ edges{ size node{ name color } } } }
     }
   }
 }"""
@@ -98,12 +139,14 @@ query($l:String!, $after:String){
 
 def fetch_activity(login: str, token: str) -> dict:
     # 1) últimos 12 meses con el rango por defecto de GitHub (coincide con el contador del perfil)
+    say("12M calendar")
     cal = gql(Q_CAL, {"l": login}, token)["user"]["contributionsCollection"]["contributionCalendar"]
     weeks = [[d["contributionCount"] for d in w["contributionDays"]] for w in cal["weeks"]]
     recent_days = {d["date"]: d["contributionCount"] for w in cal["weeks"] for d in w["contributionDays"]}
     cutoff = (dt.datetime.now(dt.timezone.utc).date() - dt.timedelta(days=364)).isoformat()
 
     # 2) histórico completo en ventanas de <= 1 año (límite de la API)
+    say("account created date")
     created = dt.datetime.fromisoformat(
         gql(Q_CREATED, {"l": login}, token)["user"]["createdAt"].replace("Z", "+00:00")
     )
@@ -112,6 +155,7 @@ def fetch_activity(login: str, token: str) -> dict:
     all_days: dict[str, int] = {}
     while start <= now:
         end = min(start + dt.timedelta(days=364, hours=23, minutes=59, seconds=59), now)
+        say(f"history {start.date()} -> {end.date()}")
         c = gql(
             Q_CAL,
             {"l": login, "from": iso(start), "to": iso(end)},
@@ -160,8 +204,10 @@ def streaks(days: dict[str, int]) -> tuple[int, int]:
 
 def fetch_languages(login: str, token: str, exclude: set[str]) -> dict:
     totals: dict[str, list] = {}
-    repos, after = 0, None
+    repos, after, page = 0, None, 0
     while True:
+        page += 1
+        say(f"languages, repos page {page}")
         repo_page = gql(Q_LANGS, {"l": login, "after": after}, token)["user"]["repositories"]
         for repo in repo_page["nodes"]:
             repos += 1
