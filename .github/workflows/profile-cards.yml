@@ -1,5 +1,5 @@
 name: Refresh profile cards
-
+ 
 on:
   schedule:
     - cron: "23 3 * * *"        # todos los días ~00:23 hora Argentina
@@ -9,34 +9,35 @@ on:
     paths:
       - "scripts/generate_cards.py"
       - ".github/workflows/profile-cards.yml"
-
+ 
 permissions:
   contents: write
-
+ 
 concurrency:
   group: profile-cards
   cancel-in-progress: true
-
+ 
 jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
+ 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
+ 
       - name: Generate cards
         env:
           # Con PROFILE_TOKEN (PAT con scope "repo" + "read:user") cuenta repos privados.
           # Sin él cae a GITHUB_TOKEN: funciona igual, pero solo ve datos públicos.
           GH_TOKEN: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
           PROFILE_LOGIN: ${{ github.repository_owner }}
+          PUBLIC_ONLY: ${{ secrets.PROFILE_TOKEN == '' && '1' || '0' }}
           # Los notebooks inflan los bytes por las salidas embebidas; se omiten del ranking.
           EXCLUDE_LANGS: "Jupyter Notebook"
         run: python scripts/generate_cards.py
-
+ 
       - name: Commit refreshed cards
         run: |
           git config user.name  "github-actions[bot]"
@@ -48,3 +49,4 @@ jobs:
             git commit -m "chore: refresh profile cards [skip ci]"
             git push
           fi
+ 
