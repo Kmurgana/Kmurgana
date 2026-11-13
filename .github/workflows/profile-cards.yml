@@ -1,5 +1,5 @@
 name: Refresh profile cards
- 
+
 on:
   schedule:
     - cron: "23 3 * * *"        # todos los días ~00:23 hora Argentina
@@ -9,24 +9,26 @@ on:
     paths:
       - "scripts/generate_cards.py"
       - ".github/workflows/profile-cards.yml"
- 
+
 permissions:
   contents: write
- 
+
 concurrency:
   group: profile-cards
   cancel-in-progress: true
- 
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
- 
+        with:
+          fetch-depth: 0
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
- 
+
       - name: Generate cards
         env:
           # Con PROFILE_TOKEN (PAT con scope "repo" + "read:user") cuenta repos privados.
@@ -37,7 +39,7 @@ jobs:
           # Los notebooks inflan los bytes por las salidas embebidas; se omiten del ranking.
           EXCLUDE_LANGS: "Jupyter Notebook"
         run: python scripts/generate_cards.py
- 
+
       - name: Commit refreshed cards
         run: |
           git config user.name  "github-actions[bot]"
@@ -47,6 +49,14 @@ jobs:
             echo "Nada que actualizar"
           else
             git commit -m "chore: refresh profile cards [skip ci]"
-            git push
+            # Si alguien (o otra corrida) pusheó mientras tanto, se rebasa y se reintenta.
+            # En un conflicto sobre las tarjetas gana la versión recién generada.
+            for i in 1 2 3; do
+              git pull --rebase -X theirs origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME" && exit 0
+              git rebase --abort 2>/dev/null || true
+              sleep $((i * 5))
+            done
+            echo "No se pudo pushear tras 3 intentos" && exit 1
           fi
+
  
