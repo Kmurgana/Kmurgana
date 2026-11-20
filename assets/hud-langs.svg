@@ -23,23 +23,23 @@ text{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberatio
 <path d="M12 22V12a2 2 0 0 1 2-2h10M408 22V12a2 2 0 0 0-2-2h-10M12 208v10a2 2 0 0 0 2 2h10M408 208v10a2 2 0 0 1-2 2h-10" fill="none" stroke="#00E5FF" stroke-width="1.4" opacity=".75"/>
 <text x="24" y="31" class="t">STACK.USAGE</text>
 <circle cx="396" cy="27.5" r="3" fill="#7CFFB2"><animate attributeName="opacity" values="1;.25;1" dur="2.4s" repeatCount="indefinite"/></circle>
-<text x="386" y="31" class="m" text-anchor="end">SYNC 2026-11-19</text>
+<text x="386" y="31" class="m" text-anchor="end">SYNC 2026-11-20</text>
 <clipPath id="bar"><rect x="24" y="54" width="372" height="10" rx="5"/></clipPath>
 <g clip-path="url(#bar)">
-<rect x="24.00" y="54" width="209.77" height="10" fill="#3572A5"/>
-<rect x="233.17" y="54" width="75.18" height="10" fill="#e34c26"/>
-<rect x="307.76" y="54" width="57.72" height="10" fill="#3178c6"/>
-<rect x="364.88" y="54" width="24.08" height="10" fill="#f1e05a"/>
-<rect x="388.36" y="54" width="3.95" height="10" fill="#663399"/>
-<rect x="391.71" y="54" width="2.89" height="10" fill="#336790"/>
-<rect x="394.00" y="54" width="2.60" height="10" fill="#6B7F95"/>
+<rect x="24.00" y="54" width="206.36" height="10" fill="#3572A5"/>
+<rect x="229.76" y="54" width="73.86" height="10" fill="#e34c26"/>
+<rect x="303.02" y="54" width="62.82" height="10" fill="#3178c6"/>
+<rect x="365.24" y="54" width="23.68" height="10" fill="#f1e05a"/>
+<rect x="388.31" y="54" width="3.89" height="10" fill="#663399"/>
+<rect x="391.60" y="54" width="3.03" height="10" fill="#336790"/>
+<rect x="394.04" y="54" width="2.56" height="10" fill="#6B7F95"/>
 </g>
-<circle cx="29" cy="90" r="4.5" fill="#3572A5" filter="url(#glow)"/><text x="42" y="94" class="n">Python</text><text x="196" y="94" class="p" text-anchor="end">56.2%</text>
-<circle cx="219" cy="90" r="4.5" fill="#e34c26" filter="url(#glow)"/><text x="232" y="94" class="n">HTML</text><text x="386" y="94" class="p" text-anchor="end">20.0%</text>
-<circle cx="29" cy="120" r="4.5" fill="#3178c6" filter="url(#glow)"/><text x="42" y="124" class="n">TypeScript</text><text x="196" y="124" class="p" text-anchor="end">15.4%</text>
-<circle cx="219" cy="120" r="4.5" fill="#f1e05a" filter="url(#glow)"/><text x="232" y="124" class="n">JavaScript</text><text x="386" y="124" class="p" text-anchor="end">6.3%</text>
+<circle cx="29" cy="90" r="4.5" fill="#3572A5" filter="url(#glow)"/><text x="42" y="94" class="n">Python</text><text x="196" y="94" class="p" text-anchor="end">55.3%</text>
+<circle cx="219" cy="90" r="4.5" fill="#e34c26" filter="url(#glow)"/><text x="232" y="94" class="n">HTML</text><text x="386" y="94" class="p" text-anchor="end">19.7%</text>
+<circle cx="29" cy="120" r="4.5" fill="#3178c6" filter="url(#glow)"/><text x="42" y="124" class="n">TypeScript</text><text x="196" y="124" class="p" text-anchor="end">16.7%</text>
+<circle cx="219" cy="120" r="4.5" fill="#f1e05a" filter="url(#glow)"/><text x="232" y="124" class="n">JavaScript</text><text x="386" y="124" class="p" text-anchor="end">6.2%</text>
 <circle cx="29" cy="150" r="4.5" fill="#663399" filter="url(#glow)"/><text x="42" y="154" class="n">CSS</text><text x="196" y="154" class="p" text-anchor="end">0.9%</text>
-<circle cx="219" cy="150" r="4.5" fill="#336790" filter="url(#glow)"/><text x="232" y="154" class="n">PLpgSQL</text><text x="386" y="154" class="p" text-anchor="end">0.6%</text>
+<circle cx="219" cy="150" r="4.5" fill="#336790" filter="url(#glow)"/><text x="232" y="154" class="n">PLpgSQL</text><text x="386" y="154" class="p" text-anchor="end">0.7%</text>
 <circle cx="29" cy="180" r="4.5" fill="#6B7F95" filter="url(#glow)"/><text x="42" y="184" class="n">Other</text><text x="196" y="184" class="p" text-anchor="end">0.5%</text>
 <text x="24" y="212" class="m">24 repos · Jupyter Notebook excluded</text>
 </svg>
