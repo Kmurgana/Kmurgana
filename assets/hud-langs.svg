@@ -23,7 +23,7 @@ text{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberatio
 <path d="M12 22V12a2 2 0 0 1 2-2h10M408 22V12a2 2 0 0 0-2-2h-10M12 208v10a2 2 0 0 0 2 2h10M408 208v10a2 2 0 0 1-2 2h-10" fill="none" stroke="#00E5FF" stroke-width="1.4" opacity=".75"/>
 <text x="24" y="31" class="t">STACK.USAGE</text>
 <circle cx="396" cy="27.5" r="3" fill="#7CFFB2"><animate attributeName="opacity" values="1;.25;1" dur="2.4s" repeatCount="indefinite"/></circle>
-<text x="386" y="31" class="m" text-anchor="end">SYNC 2026-11-23</text>
+<text x="386" y="31" class="m" text-anchor="end">SYNC 2026-11-24</text>
 <clipPath id="bar"><rect x="24" y="54" width="372" height="10" rx="5"/></clipPath>
 <g clip-path="url(#bar)">
 <rect x="24.00" y="54" width="202.03" height="10" fill="#3572A5"/>
