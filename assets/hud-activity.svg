@@ -23,11 +23,11 @@ text{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberatio
 <path d="M12 22V12a2 2 0 0 1 2-2h10M408 22V12a2 2 0 0 0-2-2h-10M12 208v10a2 2 0 0 0 2 2h10M408 208v10a2 2 0 0 1-2 2h-10" fill="none" stroke="#00E5FF" stroke-width="1.4" opacity=".75"/>
 <text x="24" y="31" class="t">ACTIVITY.LOG</text>
 <circle cx="396" cy="27.5" r="3" fill="#7CFFB2"><animate attributeName="opacity" values="1;.25;1" dur="2.4s" repeatCount="indefinite"/></circle>
-<text x="386" y="31" class="m" text-anchor="end">SYNC 2026-11-27</text>
-<rect x="24" y="48" width="174" height="45" rx="8" fill="#00E5FF" fill-opacity=".06" stroke="#00E5FF" stroke-opacity=".35"/><text x="34" y="63" class="l">LAST 12 MONTHS</text><text x="34" y="86" class="v" fill="#00E5FF" filter="url(#glow)">3,806</text><text x="118.0" y="86" class="u">contribs</text>
-<rect x="206" y="48" width="174" height="45" rx="8" fill="#FF2E9A" fill-opacity=".06" stroke="#FF2E9A" stroke-opacity=".35"/><text x="216" y="63" class="l">CURRENT STREAK</text><text x="216" y="86" class="v" fill="#FF2E9A" filter="url(#glow)">18</text><text x="253.2" y="86" class="u">days</text>
+<text x="386" y="31" class="m" text-anchor="end">SYNC 2026-11-28</text>
+<rect x="24" y="48" width="174" height="45" rx="8" fill="#00E5FF" fill-opacity=".06" stroke="#00E5FF" stroke-opacity=".35"/><text x="34" y="63" class="l">LAST 12 MONTHS</text><text x="34" y="86" class="v" fill="#00E5FF" filter="url(#glow)">3,892</text><text x="118.0" y="86" class="u">contribs</text>
+<rect x="206" y="48" width="174" height="45" rx="8" fill="#FF2E9A" fill-opacity=".06" stroke="#FF2E9A" stroke-opacity=".35"/><text x="216" y="63" class="l">CURRENT STREAK</text><text x="216" y="86" class="v" fill="#FF2E9A" filter="url(#glow)">19</text><text x="253.2" y="86" class="u">days</text>
 <rect x="24" y="100" width="174" height="45" rx="8" fill="#A78BFA" fill-opacity=".06" stroke="#A78BFA" stroke-opacity=".35"/><text x="34" y="115" class="l">LONGEST STREAK</text><text x="34" y="138" class="v" fill="#A78BFA" filter="url(#glow)">47</text><text x="71.2" y="138" class="u">days</text>
-<rect x="206" y="100" width="174" height="45" rx="8" fill="#7CFFB2" fill-opacity=".06" stroke="#7CFFB2" stroke-opacity=".35"/><text x="216" y="115" class="l">ALL-TIME</text><text x="216" y="138" class="v" fill="#7CFFB2" filter="url(#glow)">3,984</text><text x="300.0" y="138" class="u">contribs</text>
+<rect x="206" y="100" width="174" height="45" rx="8" fill="#7CFFB2" fill-opacity=".06" stroke="#7CFFB2" stroke-opacity=".35"/><text x="216" y="115" class="l">ALL-TIME</text><text x="216" y="138" class="v" fill="#7CFFB2" filter="url(#glow)">4,070</text><text x="300.0" y="138" class="u">contribs</text>
 <text x="24" y="162" class="l">// 12M HEATMAP</text>
 <rect x="24.00" y="170.00" width="5.42" height="5.42" rx="1.2" fill="#111B28"/>
 <rect x="24.00" y="177.02" width="5.42" height="5.42" rx="1.2" fill="#111B28"/>
@@ -196,7 +196,7 @@ text{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberatio
 <rect x="185.43" y="191.06" width="5.42" height="5.42" rx="1.2" fill="#0E8497"/>
 <rect x="185.43" y="198.08" width="5.42" height="5.42" rx="1.2" fill="#0E8497"/>
 <rect x="185.43" y="205.09" width="5.42" height="5.42" rx="1.2" fill="#0B4A57"/>
-<rect x="185.43" y="212.11" width="5.42" height="5.42" rx="1.2" fill="#0E8497"/>
+<rect x="185.43" y="212.11" width="5.42" height="5.42" rx="1.2" fill="#0B4A57"/>
 <rect x="192.45" y="170.00" width="5.42" height="5.42" rx="1.2" fill="#111B28"/>
 <rect x="192.45" y="177.02" width="5.42" height="5.42" rx="1.2" fill="#111B28"/>
 <rect x="192.45" y="184.04" width="5.42" height="5.42" rx="1.2" fill="#0E8497"/>
@@ -243,7 +243,7 @@ text{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberatio
 <rect x="234.57" y="177.02" width="5.42" height="5.42" rx="1.2" fill="#0B4A57"/>
 <rect x="234.57" y="184.04" width="5.42" height="5.42" rx="1.2" fill="#0B4A57"/>
 <rect x="234.57" y="191.06" width="5.42" height="5.42" rx="1.2" fill="#0E8497"/>
-<rect x="234.57" y="198.08" width="5.42" height="5.42" rx="1.2" fill="#0E8497"/>
+<rect x="234.57" y="198.08" width="5.42" height="5.42" rx="1.2" fill="#0B4A57"/>
 <rect x="234.57" y="205.09" width="5.42" height="5.42" rx="1.2" fill="#111B28"/>
 <rect x="234.57" y="212.11" width="5.42" height="5.42" rx="1.2" fill="#111B28"/>
 <rect x="241.58" y="170.00" width="5.42" height="5.42" rx="1.2" fill="#111B28"/>
@@ -293,7 +293,7 @@ text{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberatio
 <rect x="283.70" y="184.04" width="5.42" height="5.42" rx="1.2" fill="#00C4E0"/>
 <rect x="283.70" y="191.06" width="5.42" height="5.42" rx="1.2" fill="#00C4E0"/>
 <rect x="283.70" y="198.08" width="5.42" height="5.42" rx="1.2" fill="#00C4E0"/>
-<rect x="283.70" y="205.09" width="5.42" height="5.42" rx="1.2" fill="#0E8497"/>
+<rect x="283.70" y="205.09" width="5.42" height="5.42" rx="1.2" fill="#0B4A57"/>
 <rect x="283.70" y="212.11" width="5.42" height="5.42" rx="1.2" fill="#111B28"/>
 <rect x="290.72" y="170.00" width="5.42" height="5.42" rx="1.2" fill="#111B28"/>
 <rect x="290.72" y="177.02" width="5.42" height="5.42" rx="1.2" fill="#00C4E0"/>
@@ -389,7 +389,7 @@ text{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberatio
 <rect x="381.96" y="170.00" width="5.42" height="5.42" rx="1.2" fill="#00C4E0"/>
 <rect x="381.96" y="177.02" width="5.42" height="5.42" rx="1.2" fill="#00C4E0"/>
 <rect x="381.96" y="184.04" width="5.42" height="5.42" rx="1.2" fill="#00C4E0"/>
-<rect x="381.96" y="191.06" width="5.42" height="5.42" rx="1.2" fill="#0E8497"/>
+<rect x="381.96" y="191.06" width="5.42" height="5.42" rx="1.2" fill="#0B4A57"/>
 <rect x="381.96" y="198.08" width="5.42" height="5.42" rx="1.2" fill="#00C4E0"/>
 <rect x="381.96" y="205.09" width="5.42" height="5.42" rx="1.2" fill="#00C4E0"/>
 <rect x="381.96" y="212.11" width="5.42" height="5.42" rx="1.2" fill="#8DF6FF"><animate attributeName="opacity" values="1;.45;1" dur="3.6s" begin="2.13s" repeatCount="indefinite"/></rect>
@@ -398,6 +398,7 @@ text{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberatio
 <rect x="388.98" y="184.04" width="5.42" height="5.42" rx="1.2" fill="#00C4E0"/>
 <rect x="388.98" y="191.06" width="5.42" height="5.42" rx="1.2" fill="#8DF6FF"><animate attributeName="opacity" values="1;.45;1" dur="3.6s" begin="1.87s" repeatCount="indefinite"/></rect>
 <rect x="388.98" y="198.08" width="5.42" height="5.42" rx="1.2" fill="#8DF6FF"><animate attributeName="opacity" values="1;.45;1" dur="3.6s" begin="2.08s" repeatCount="indefinite"/></rect>
-<rect x="388.98" y="205.09" width="5.42" height="5.42" rx="1.2" fill="#0E8497"/>
-<text x="396" y="162" class="m" text-anchor="end">147 active days</text>
+<rect x="388.98" y="205.09" width="5.42" height="5.42" rx="1.2" fill="#8DF6FF"><animate attributeName="opacity" values="1;.45;1" dur="3.6s" begin="2.29s" repeatCount="indefinite"/></rect>
+<rect x="388.98" y="212.11" width="5.42" height="5.42" rx="1.2" fill="#00C4E0"/>
+<text x="396" y="162" class="m" text-anchor="end">148 active days</text>
 </svg>
